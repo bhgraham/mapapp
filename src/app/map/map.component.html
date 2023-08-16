@@ -1,0 +1,13 @@
+<div class="map-container">
+  <svg (mousemove)="onMouseMove($event)" (mousedown)="onMouseDown($event)">
+    <ng-container *ngFor="let path of svgPaths">
+      <path
+        [attr.d]="path.d"
+        [attr.id]="path.id"
+        [attr.fill]="path.fill"
+        (mouseover)="onPathMouseOver($event, path)"
+        (mousedown)="onPathMouseDown($event, path)"
+      ></path>
+    </ng-container>
+  </svg>
+</div>
