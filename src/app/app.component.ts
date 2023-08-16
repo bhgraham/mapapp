@@ -5,33 +5,31 @@ import { InfoService } from './info.service'; // Import InfoService
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-
 export class AppComponent implements OnInit {
-  svgPaths: any[] = []; 
+  svgPaths: any[] = [];
   selectedPath: any;
   countryInfo: any;
 
-  constructor(
-    private http: HttpClient,
-    private infoService: InfoService
-  ) {}
+  constructor(private http: HttpClient, private infoService: InfoService) {}
 
   ngOnInit() {
-    this.http.get('assets/world-map.svg', { responseType: 'text' }).subscribe((svgContent: string) => {
-      const parser = new DOMParser();
-      const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
-      const paths = svgDoc.querySelectorAll('path');
+    this.http
+      .get('assets/world-map.svg', { responseType: 'text' })
+      .subscribe((svgContent: string) => {
+        const parser = new DOMParser();
+        const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
+        const paths = svgDoc.querySelectorAll('path');
 
-      paths.forEach((path: SVGPathElement) => {
-        this.svgPaths.push({
-          d: path.getAttribute('d'),
-          id: path.getAttribute('id'),
-          fill: path.getAttribute('fill')
+        paths.forEach((path: SVGPathElement) => {
+          this.svgPaths.push({
+            d: path.getAttribute('d'),
+            id: path.getAttribute('id'),
+            fill: path.getAttribute('fill'),
+          });
         });
       });
-    });
   }
 
   onPathMouseOver(event: any) {
@@ -58,4 +56,3 @@ export class AppComponent implements OnInit {
     }
   }
 }
-

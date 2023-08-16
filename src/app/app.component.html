@@ -16,14 +16,32 @@
       <p>Region: {{ countryInfo.region.value }}</p>
       <p>Income Level: {{ countryInfo.incomeLevel.value }}</p>
       <p>ISO2Code: {{ countryInfo.iso2Code }}</p>
-      <p>Coordinates: <a target="_blank" href="https://www.google.com/maps/place/{{ countryInfo.latitude }},{{ countryInfo.longitude }}">{{ countryInfo.latitude }}, {{ countryInfo.longitude }}</a> </p>
+      <p>
+        Coordinates:
+        <a
+          target="_blank"
+          href="https://www.google.com/maps/place/{{ countryInfo.latitude }},{{
+            countryInfo.longitude
+          }}"
+          >{{ countryInfo.latitude }}, {{ countryInfo.longitude }}</a
+        >
+      </p>
     </div>
-<div class="footer">
-  <p> &copy; Benjamin Graham for D280 </p>
-  <p>The World Bank, World Development Indicators. (2023). World Bank Open Data API Version 2 Country API [Data files]. Retrieved from 
-<a target="_blank" href="https://api.worldbank.org/v2/country/all">https://api.worldbank.org/v2/country/all</a></p>
-<p>World Map, &copy; All rights reserved. Retrieved by <a target="_blank" href="https://innovsandbox.space/map.html">Innovation Sandbox</a> </p>
-</div>
-
+    <div class="footer">
+      <p>&copy; Benjamin Graham for D280</p>
+      <p>
+        The World Bank, World Development Indicators. (2023). World Bank Open
+        Data API Version 2 Country API [Data files]. Retrieved from
+        <a target="_blank" href="https://api.worldbank.org/v2/country/all"
+          >https://api.worldbank.org/v2/country/all</a
+        >
+      </p>
+      <p>
+        World Map, &copy; All rights reserved. Retrieved by
+        <a target="_blank" href="https://innovsandbox.space/map.html"
+          >Innovation Sandbox</a
+        >
+      </p>
+    </div>
   </div>
 </div>

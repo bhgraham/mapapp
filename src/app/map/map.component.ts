@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.css']
+  styleUrls: ['./map.component.css'],
 })
 export class MapComponent {
   @Input() svgPaths: any[] = [];
@@ -15,14 +15,11 @@ export class MapComponent {
     this.highlightPath(path);
   }
 
-  onPathMouseDown(event: MouseEvent, path: any) {
-  }
+  onPathMouseDown(event: MouseEvent, path: any) {}
 
-  onMouseMove(event: MouseEvent) {
-  }
+  onMouseMove(event: MouseEvent) {}
 
-  onMouseDown(event: MouseEvent) {
-  }
+  onMouseDown(event: MouseEvent) {}
 
   private highlightPath(path: any) {
     this.resetHighlight();
